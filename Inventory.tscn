@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://chenar.gd" type="Script" id=1]
+[ext_resource path="res://slot.gd" type="Script" id=2]
+[ext_resource path="res://Chenar.png" type="Texture" id=3]
+[ext_resource path="res://Slot.png" type="Texture" id=4]
+[ext_resource path="res://galeataplina.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 512, 512 )
+
+[node name="Inventory" type="Node2D"]
+position = Vector2( 2, 0 )
+
+[node name="chenar" type="TextureRect" parent="."]
+margin_right = 1536.0
+margin_bottom = 512.0
+texture = ExtResource( 3 )
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="chenar"]
+margin_right = 1400.0
+margin_bottom = 480.0
+custom_constants/separation = -20
+
+[node name="slot" type="Panel" parent="chenar/HBoxContainer"]
+margin_right = 480.0
+margin_bottom = 480.0
+rect_min_size = Vector2( 480, 480 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="chenar/HBoxContainer/slot"]
+margin_left = 112.0
+margin_top = 128.0
+margin_right = 384.0
+margin_bottom = 400.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="slot2" type="Panel" parent="chenar/HBoxContainer"]
+margin_left = 460.0
+margin_right = 940.0
+margin_bottom = 480.0
+rect_min_size = Vector2( 480, 480 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="chenar/HBoxContainer/slot2"]
+margin_left = 112.0
+margin_top = 128.0
+margin_right = 384.0
+margin_bottom = 400.0
+expand = true
+
+[node name="slot3" type="Panel" parent="chenar/HBoxContainer"]
+margin_left = 920.0
+margin_right = 1400.0
+margin_bottom = 480.0
+rect_min_size = Vector2( 480, 480 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="chenar/HBoxContainer/slot3"]
+margin_left = 112.0
+margin_top = 128.0
+margin_right = 384.0
+margin_bottom = 400.0
+expand = true
+
+[node name="MovableItem" type="Node" parent="chenar"]
+
+[node name="TextureRect" type="TextureRect" parent="chenar/MovableItem"]
+anchor_left = 0.086
+anchor_top = 0.147
+anchor_right = 0.391
+anchor_bottom = 0.667
+margin_left = -248.064
+margin_top = -256.2
+margin_right = -240.384
+margin_bottom = -240.2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 982, 528 )
+scale = Vector2( 6, 6 )
+zoom = Vector2( 2, 2 )

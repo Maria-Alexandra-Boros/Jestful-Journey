@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://finish.gd" type="Script" id=1]
+[ext_resource path="res://fin2.png" type="Texture" id=2]
+[ext_resource path="res://menu.png" type="Texture" id=3]
+[ext_resource path="res://quit.png" type="Texture" id=4]
+
+[node name="finish" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -8.0
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = 6.10352e-05
+margin_right = 1024.0
+margin_bottom = 595.0
+texture = ExtResource( 2 )
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 512.0
+margin_right = 83.0
+margin_bottom = 532.0
+rect_scale = Vector2( 3, 3 )
+text = "Quit"
+
+[node name="TextureRect" type="TextureRect" parent="Quit"]
+margin_left = -5.33333
+margin_top = -8.0
+margin_right = 1018.67
+margin_bottom = 504.0
+rect_scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 4 )
+
+[node name="Play Again" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 416.0
+margin_right = 83.0
+margin_bottom = 436.0
+rect_scale = Vector2( 3, 3 )
+text = "Men"
+
+[node name="TextureRect" type="TextureRect" parent="Play Again"]
+margin_left = -5.33334
+margin_top = -8.0
+margin_right = 1018.67
+margin_bottom = 504.0
+rect_scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 3 )
+
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Play Again" to="." method="_on_Play_Again_pressed"]
